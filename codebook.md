@@ -1,16 +1,17 @@
 ##codebook:
 ###Source
-The source data has come from 
+The source data has come from: 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
 This data set has been downloaded and unzipped into the working directory for run_analysis.R <the setwd() first line can be changed to reflect alternate working directories>
 The files are visible as a subdirectory structure in folder "UCI HAR Dataset/....."
 Within the toplevel source folder are 4 .txt files and the user should familiarise themselves with the readme.txt and features_info.txt for detailed explanations of the data, its makeup in the source folders, and the observation details. Features.txt and activity_labels.txt provide a list of fieldnames, and a description of activitylabels. 
 ###Output
-After run_analysis.R has been executed
+After run_analysis.R has been executed a file called "meantidy.csv" will be produced
 The columns output in tidy are:
-Subject
-Activity
-66 variables containing the mean of observation data for each subject / activity.
+* Subject
+* Activity
+* 66 variables containing the mean of observation data for each subject / activity.
 The 66 variables are a renamed subset of the original data 561
 The subset was chosen for those observations that provided mean and standard deviation data only. 
 The exact filter is based on selecting those where the observation title contained
