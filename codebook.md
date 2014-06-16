@@ -34,21 +34,21 @@ Create a data set which contains the mean value, by Subject and Activity, for ea
 
 The only changes needed to the run_analysis.R script would be the working directory setwd() statement
 The script performs the following:
-load the data files. There are two sets of data, labelled 'train' and 'test', containing equivalent information. The main data files, containing the 561 observation columns are the 'X_' versions of 'train' and 'test'. In addition, the 'Y_'files contain the activityid for each observation row, and the 'subject_' file contains the subjectid for each observation (both of which are not present in the 'X_' files)
-combine the columns for subject (an id) and activity (an id) into the main dataset for each train/ test group
-'join' the activity id to the activity_labels.txt data to replace with activity label
-combine the train and test data, by row binding, into a single, master dataset of train + test, containing the subject and the activity label.
-Determine the Column selection for tidy based on the following criteria:
-The tidy set is comprisd of those observation fields that are related to a 'mean' or 'standard deviation'.
+* load the data files. There are two sets of data, labelled 'train' and 'test', containing equivalent information. The main data files, containing the 561 observation columns are the 'X_' versions of 'train' and 'test'. In addition, the 'Y_'files contain the activityid for each observation row, and the 'subject_' file contains the subjectid for each observation (both of which are not present in the 'X_' files)
+* combine the columns for subject (an id) and activity (an id) into the main dataset for each train/ test group
+* 'join' the activity id to the activity_labels.txt data to replace with activity label
+* combine the train and test data, by row binding, into a single, master dataset of train + test, containing the subject and the activity label.
+* Determine the Column selection for tidy based on the following criteria:
+* The tidy set is comprised of those observation fields that are related to a 'mean' or 'standard deviation'.
 The precise definition used is as follows:
    labels[which(labels %like% "mean" & !(labels %like% "meanFreq"))]
    labels[which(labels %like% "std")]
 selecting those observations that contain "std" or 'exactly' "mean" (excluding any with "Mean")
 
-These criteria are then used to extract a reduced dataset containg subject, activity and the selected observation columns
+* These criteria are then used to extract a reduced dataset containg subject, activity and the selected observation columns
 
-label this new dataset, removing "-" and "()" from the labels and converting all to lower case (the lecture notes recommend ALL lowercase for the column labels, however in this case it may make the columns harder to read and match up with original source fields)
+* label this new dataset, removing "-" and "()" from the labels and converting all to lower case (the lecture notes recommend ALL lowercase for the column labels, however in this case it may make the columns harder to read and match up with original source fields)
 
-The final step is to calculate the mean() across the new dataset, grouping by subject and activity, giving a single mean value per observation for each subject/activity combination.
-This is written out as "meantidy.csv".
+* The final step is to calculate the mean() across the new dataset, grouping by subject and activity, giving a single mean value per observation for each subject/activity combination.
+* This is written out as "meantidy.csv".
 
